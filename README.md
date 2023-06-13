@@ -9,13 +9,24 @@ If you want to store test results and use dashborad, run it as docker.
 Requires : [k6](https://k6.io/docs/get-started/installation/)
 
 - open terminal or cmd
+
   ```bash
-  cd ...\load-test
+  cd ...\node-k6
   ```
+
 - run scripts Load test
+
   ```bash
-  k6 run ./scripts/test.js
+  k6 run ./scripts/main-constant1s.js
   ```
+
+### Run Project Nodejs
+
+```bash
+npm run start
+```
+
+> Note : Project : localhost:8000
 
 ### Docker
 
@@ -36,11 +47,15 @@ Requires : [docker](https://www.docker.com/) and [node.js](https://nodejs.org/en
   ```
 
 - pull image grafana/grafana
+
   ```bash
   docker pull grafana/grafana
   ```
-- cd ...\load-test
+
+- cd ...\node-k6
+
 - run file docker compose
+
   ```bash
   docker compose up influxdb grafana -d
   ```
@@ -48,7 +63,9 @@ Requires : [docker](https://www.docker.com/) and [node.js](https://nodejs.org/en
 > Note : grafana : localhost:3300
 
 - run scripts Load test
+
   ```bash
-  docker compose run --rm k6 run /scripts/test.js
+  docker compose run --rm k6 run /scripts/main-constant1s.js
   ```
-- [setUp Grafana.docx](https://github.com/nathachai13011997/node-k6/blob/main/SettingGrafana.docx)
+
+- [SettingGrafana.docx](https://docs.google.com/document/d/1aoyWBcmrFlFlgoaF80wdMMlUKpHI0aHs/edit?usp=sharing&ouid=115671893352614505213&rtpof=true&sd=true)
