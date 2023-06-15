@@ -1,16 +1,13 @@
 pipeline {
   agent any
   stages {
-    stage('Verify K6') {
+    stage('verify k6') {
       steps {
-				echo 'Verifying K6...'
-        sh 'chmod +x setup_k6.sh'
-				sh './setup_k6.sh'
+        sh 'k6 version'
       }
     }
-    stage('Performance Testing') {
+    stage('run k6 test') {
       steps {
-        echo "Running performance tests..."
         sh 'k6 run scripts/script.js'
       }
     }
