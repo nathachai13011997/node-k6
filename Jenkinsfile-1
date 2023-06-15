@@ -8,7 +8,7 @@ pipeline {
     }
     stage('run k6 test') {
       steps {
-        sh 'k6 run scripts/script.js'
+        sh 'k6 run scripts/script.js --out influxdb=http://localhost:8086/k6'
       }
     }
   }
