@@ -11,7 +11,7 @@ pipeline {
     stage('Performance Testing') {
       steps {
         echo "Running performance tests..."
-        sh 'k6 run scripts/script.js'
+        sh 'k6 run scripts/script.js --out influxdb=http://influxdb:8086/k6'
       }
     }
   }
