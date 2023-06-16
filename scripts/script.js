@@ -4,18 +4,14 @@ import { sleep } from "k6"
 export let options = {
   tags: {
     name: "lego"
+  },
+  scenarios: {
+    contacts1: {
+      executor: "constant-vus",
+      vus: 1,
+      duration: "1s"
+    }
   }
-  //   insecureSkipTLSVerify: true,
-  //   thresholds: {
-  //     checks: ["rate>0.94"]
-  //   },
-  //   scenarios: {
-  //     contacts1: {
-  //       executor: "constant-vus",
-  //       vus: 1,
-  //       duration: "1s"
-  //     }
-  //   }
 }
 
 export default function () {
