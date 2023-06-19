@@ -17,7 +17,7 @@ export let options = {
   scenarios: {
     contacts1: {
       executor: "constant-vus",
-      vus: 1,
+      vus: 10,
       duration: "1s"
     }
   }
